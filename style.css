@@ -1,0 +1,62 @@
+header img {
+    width: 50px;
+    border-radius: 5px;
+    margin-left: 70px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas:
+        "header header header header header header"
+        ". main main main main ."
+        ". main main main main ."
+        ". main main main main ."
+        "footer footer footer footer footer footer";
+}
+
+.header {
+     grid-area: header; 
+     display: flex;
+     justify-content: space-between;
+     padding: .5em 1em;
+     border-bottom: 2px solid #ccc;
+     align-items: center;
+     background-color: dimgray;
+    
+}
+h1 {
+    font-size: x-large;
+}
+li {
+    display: inline-block;
+    margin: 1.4em 1em 1em 1em;
+}
+.footer { 
+    grid-area: footer; 
+}
+.main { 
+    grid-area: main;
+    /* background-image: url(img/image-from-rawpixel-id-1015309-jpeg\ \(1\).jpg); */
+    background-size: cover; 
+}
+.buttons1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas:
+        ". . . . . ."
+        ". . . . . ."
+        ". . . . . ."
+        ". . . . . ."
+        ". . . . . .";
+    margin: auto;
+    width:300px;
+}
+button{
+    font-size: larger;
+    padding: 5px 10px;
+}
