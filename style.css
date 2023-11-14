@@ -1,23 +1,8 @@
+/* ---Imports----------------------------------------------------*/
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&family=Playpen+Sans&display=swap');
 
-header img {
-    width: 80px;
-    border-radius: 5px;
-    margin-left: 200px;
-}
-
-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 20px 20px;
-    grid-template-areas:
-        "header header header header header header"
-        ". main main main main ."
-        ". main main main main ."
-        ". main main main main ."
-        "footer footer footer footer footer footer";
-}
+/* ---Header/Nav------------------------------------------------ */
 
 .header {
      grid-area: header; 
@@ -27,46 +12,27 @@ body {
      border-bottom: 2px solid #ccc;
      align-items: center;
      background-color: dimgray;
-    
 }
+
+nav {
+    padding: 25px;
+}
+
+header img {
+    width: 80px;
+    border-radius: 5px;
+    margin-left: 200px;
+}
+
 h1 {
     font-size: xxx-large;
     font-family: 'Dancing Script', cursive;
     color: aliceblue;
-
+    
 }
 li {
     display: inline-block;
     margin: 1.4em 1em 1em 1em;
-}
-.footer { 
-    grid-area: footer; 
-    background-color: dimgray;
-    text-align: center;
-    padding: 10px;
-}
-.main { 
-    grid-area: main;
-    /* background-image: url(img/image-from-rawpixel-id-1015309-jpeg\ \(1\).jpg); */
-    background-size: cover; 
-}
-.buttons1{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 20px 20px;
-    grid-template-areas:
-        ". . . . . ."
-        ". . . . . ."
-        ". . . . . ."
-        ". . . . . ."
-        ". . . . . .";
-    margin: auto;
-    width:300px;
-}
-button{
-    font-size: larger;
-    padding: 5px 10px;
 }
 
 .navButtons{
@@ -99,4 +65,87 @@ button{
 
 .navButtons:hover {
   box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+}
+
+/* ---Body/Main------------------------------------------------- */
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
+    grid-template-rows: auto 1fr auto;
+    gap: 20px 20px;
+    grid-template-areas:
+        "header header header header header header"
+        ". main main main main ."
+        ". main main main main ."
+        ". main main main main ."
+        "footer footer footer footer footer footer";
+    min-height: 100vh;
+}
+
+.main { 
+    grid-area: main;
+    /* background-image: url(img/image-from-rawpixel-id-1015309-jpeg\ \(1\).jpg); */
+    background-size: cover; 
+}
+
+.buttons1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas:
+        ". . . . . ."
+        ". . . . . ."
+        ". . . . . ."
+        ". . . . . ."
+        ". . . . . .";
+    margin: auto;
+    width:300px;
+}
+button {
+    font-size: larger;
+    padding: 5px 10px;
+}
+
+/* ---Footer---------------------------------------------------- */
+
+.footer { 
+    grid-area: footer; 
+    background-color: dimgray;
+    text-align: center;
+    padding: 50px;
+    font-size: 25px;
+}
+
+
+/* ---About me page--------------------------------------------- */
+
+.bios {
+    /* border: 1px red solid; */
+    display: inline-flex;
+    margin-top: 25px;  
+}
+
+.bio {
+    margin: 50px;
+}
+
+.bio img {
+    /* border: 1px blue solid; */
+    display:block;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px darkgray;  
+}
+
+.bio p {
+    /* border: 1px green solid; */
+    display:block;
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    box-shadow: 0 4px 8px darkgrey;  
 }
