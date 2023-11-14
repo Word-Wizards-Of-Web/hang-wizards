@@ -76,9 +76,9 @@ new Questions ('array', 'a')
 new Questions ('function', 'i,o')
 new Questions ('button', 't')
 new Questions ('meta', 'e,a')
-new Questions ('head', 'e,a')
+new Questions ('head', 'e,a') 
 
-
+cdd
 
 console.log(state.questionArray);
 console.log(previousQuestions);
