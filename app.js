@@ -33,17 +33,27 @@ previousQuestions=repeats;
 return repeats;
 }
 
-
+function renderBlanks(word) {
+    const gameContainer = document.getElementsByClassName('game-container');
+    gameContainer.innerHTML = '';
+    
+    for (let i = 0; i < word.length; i++) {
+        const blankSpace = document.createElement('div');
+        blankSpace.className = 'blank-space';
+        wordContainer.appendChild(blankSpace);
+      }
+}
+// created handleClick function
 function handleClick(event) {
-
+    let letter = event.target.textContent;
+    console.log('Clicked letter:', letter);
 }
 
-
-
-
-
-
-
+// Attach the handleClick function to each button
+const buttons = document.querySelectorAll('.buttons1 button');
+buttons.forEach(button => {
+    button.addEventListener('click', handleClick);
+});
 
 // will be moved into local storage eventually
 new Questions ('variable', 'a,e')
