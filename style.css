@@ -17,6 +17,8 @@ body {
         ". main main main main ."
         ". main main main main ."
         "footer footer footer footer footer footer";
+        background-color: #1a1a1a;
+        color: #ffffff;
 }
 
 .header {
@@ -26,13 +28,13 @@ body {
      padding: .5em 1em;
      border-bottom: 2px solid #ccc;
      align-items: center;
-     background-color: dimgray;
+     background-color: #646363;
     
 }
 h1 {
     font-size: xxx-large;
     font-family: 'Dancing Script', cursive;
-    color: aliceblue;
+    color: #ffffff;
 
 }
 li {
@@ -41,13 +43,12 @@ li {
 }
 .footer { 
     grid-area: footer; 
-    background-color: dimgray;
+    background-color: #2e2e2e;
     text-align: center;
     padding: 10px;
 }
 .main { 
     grid-area: main;
-    /* background-image: url(img/image-from-rawpixel-id-1015309-jpeg\ \(1\).jpg); */
     background-size: cover; 
 }
 .buttons1{
@@ -67,11 +68,12 @@ li {
 button{
     font-size: larger;
     padding: 5px 10px;
+    color: #ffffff;
 }
 
 .navButtons{
   align-items: center;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
   box-sizing: border-box;
@@ -99,4 +101,35 @@ button{
 
 .navButtons:hover {
   box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+}
+.buttons1 button {
+    font-size: larger;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+.buttons1 button:nth-child(odd) {
+    background-color: #3498db; 
+    color: #ffffff;
+}
+.buttons1 button:nth-child(even) {
+    background-color: #e74c3c; 
+}
+.buttons1 button:hover {
+    background-color: #566b7f;
+    transform: scale(1.50);
+}
+.hint-icon {
+    width: 50px; 
+    height: 50px;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: #ffffff;
+    transform: scale(0.75);
+    border-radius: 5px;
 }
