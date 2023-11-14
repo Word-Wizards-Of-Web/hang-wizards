@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&family=Playpen+Sans&display=swap');
 
+
 /* ---Header/Nav------------------------------------------------ */
 
 .header {
@@ -11,7 +12,8 @@
      padding: .5em 1em;
      border-bottom: 2px solid #ccc;
      align-items: center;
-     background-color: dimgray;
+     background-color: #646363;
+    
 }
 
 nav {
@@ -27,17 +29,16 @@ header img {
 h1 {
     font-size: xxx-large;
     font-family: 'Dancing Script', cursive;
-    color: aliceblue;
-    
+    color: #ffffff;
 }
+
 li {
     display: inline-block;
     margin: 1.4em 1em 1em 1em;
 }
-
 .navButtons{
   align-items: center;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
   box-sizing: border-box;
@@ -67,6 +68,7 @@ li {
   box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
 }
 
+
 /* ---Body/Main------------------------------------------------- */
 
 body {
@@ -82,6 +84,8 @@ body {
         ". main main main main ."
         "footer footer footer footer footer footer";
     min-height: 100vh;
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 
 .main { 
@@ -107,7 +111,40 @@ body {
 button {
     font-size: larger;
     padding: 5px 10px;
+    color: #ffffff;
 }
+  
+ .buttons1 button {
+    font-size: larger;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+.buttons1 button:nth-child(odd) {
+    background-color: #3498db; 
+    color: #ffffff;
+}
+.buttons1 button:nth-child(even) {
+    background-color: #e74c3c; 
+}
+.buttons1 button:hover {
+    background-color: #566b7f;
+    transform: scale(1.50);
+}
+.hint-icon {
+    width: 50px; 
+    height: 50px;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: #ffffff;
+    transform: scale(0.75);
+    border-radius: 5px;
+  
 
 /* ---Footer---------------------------------------------------- */
 
