@@ -59,6 +59,7 @@ function renderBlanks() {
     for (let i = 0; i < activeArray.length; i++) {
         const blankSpaceElement = document.createElement('div');
         blankSpaceElement.className = 'blank-spaces';
+        blankSpaceElement.id = activeArray[i]
         blankSpaceElement.textContent = activeArray[i];
         blankSpace.appendChild(blankSpaceElement);
         console.log(blankSpaceElement);
@@ -72,8 +73,8 @@ function renderBlanks() {
 
 
 
-renderBlanks();
-console.log(activeArray);
+
+
 
 function showLetters() {
     let showLetterDiv = document.getElementsByClassName('blank-spaces');
@@ -84,20 +85,23 @@ function showLetters() {
 // created handleClick function
 function handleClick(event) {
     let letter = event.target.textContent;
-    console.log('Clicked letter:', letter);
     state.currentguesses++;
-    console.log(state.currentguesses);
-    if(state.currentguesses === 10){
-        remove();
-    }
-    
-    for (let i = 0; i < activeArray.length; i++) {
-        if(letter === activeArray[i].toUpperCase()){
-            console.log('hekki');
-            
-            showLetters[i];
+    let divs = document.querySelectorAll('.blank-spaces');
+
+    for (let i = 0; i < divs.length; i++) {
+       if (letter === divs[i].id.toUpperCase()) {
+            function showLetters() {
+                let showLetterDiv = divs[i];
+                showLetterDiv.style.visibility = "visible";
+            }
+            showLetters();
         }
     }
+
+    if (state.currentguesses === 10) {
+      remove();
+    }
+    
 }
 
 
@@ -105,20 +109,31 @@ function handleClickRender(event) {
     let render = event.target.textContent;
     console.log(render);
     if(state.currentguesses === 10){
-        renderBlanks()
+        letterButtonsEventListener();
+        renderbuttonFunc();
+        renderBlanks();
         state.currentguesses = 0
     }
 }
 
 // Attach the handleClick function to each button
-const buttons = document.querySelectorAll('.buttons1 button');
-buttons.forEach(button => {
-    button.addEventListener('click', handleClick);
-});
+function letterButtonsEventListener(){
+    const buttons = document.querySelectorAll('.buttons1 button');
+    buttons.forEach(button => {
+        button.addEventListener('click', handleClick);
+    });
+}
 
-const renderButtons = document.getElementById('renderButton');
+function renderbuttonFunc(){
+    const renderButtons = document.getElementById('renderButton');
      renderButtons.addEventListener('click', handleClickRender);
+}
 
+// this is not working
+function remove(){
+    button.removeEventListener('click', handleClick);
+  
+}
 
 function playClickSound(clickSound) {
     var clickSound = document.getElementById(clickSound);
@@ -126,13 +141,10 @@ function playClickSound(clickSound) {
         clickSound.currentTime = 0;
         clickSound.play();
     }
-
-function remove(){
-    buttons.forEach(button => {
-        button.removeEventListener('click', handleClick);
-    });
-
 }
 
 console.log(state.questionArray);
 console.log(state.currentguesses);
+letterButtonsEventListener();
+renderbuttonFunc();
+renderBlanks();
