@@ -119,10 +119,19 @@ buttons.forEach(button => {
 const renderButtons = document.getElementById('renderButton');
      renderButtons.addEventListener('click', handleClickRender);
 
+
+function playClickSound(clickSound) {
+    var clickSound = document.getElementById(clickSound);
+    if (clickSound) {
+        clickSound.currentTime = 0;
+        clickSound.play();
+    }
+
 function remove(){
     buttons.forEach(button => {
         button.removeEventListener('click', handleClick);
     });
+
 }
 
 console.log(state.questionArray);
