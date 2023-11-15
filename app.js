@@ -113,8 +113,12 @@ function handleClick(event) {
 
         }
     }
+  
+  
+    //so the button can change color on click
+    event.target.classList.toggle('clicked');
 
-
+  
     if (state.currentguesses === 10) {
         remove();
         console.log(`test`);
@@ -144,6 +148,11 @@ function newRoundClickRenders(event) {
 // Attach the handleClick function to each button
 function letterButtonsEventListener() {
     const buttons = document.querySelectorAll('.buttons1 button');
+    // change color of buttons when clicked
+    // function handleClick() {
+    //     this.classList.toggle('clicked');
+    // }
+
     buttons.forEach(button => {
         button.addEventListener('click', handleClick);
     });
