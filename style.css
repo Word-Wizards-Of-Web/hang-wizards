@@ -74,7 +74,7 @@ li {
 
 body {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
     /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
     grid-template-rows: auto 1fr auto;
     gap: 20px 20px;
@@ -93,7 +93,7 @@ body {
     grid-area: main;
     background-size: cover;
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #video-background {
@@ -107,7 +107,7 @@ body {
 }
 
 .buttons1 {
-
+    /* border: dashed red 5px; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -120,6 +120,7 @@ body {
         ". . . . . .";
     margin: auto;
     width: 300px;
+    margin-top: 400px;
 }
 
 button {
@@ -274,11 +275,15 @@ h2 span {
 
 .bios {
     /* border: 1px red solid; */
-    display: inline-flex;
+    display: flex;
     margin-top: 25px;
+    width: 100%; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bio {
+    /* border: solid black 5px; */
     margin: 50px;
 }
 
