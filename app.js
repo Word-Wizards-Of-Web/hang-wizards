@@ -126,7 +126,7 @@ function playClickSound(clickSound) {
         clickSound.currentTime = 0;
         clickSound.play();
     }
-
+}
 function remove(){
     buttons.forEach(button => {
         button.removeEventListener('click', handleClick);

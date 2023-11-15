@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
         <h1>codeHang</h1>
@@ -21,16 +22,19 @@
         </nav>
     </header>
     <main class="main">
-    
+
         <div class="game-container">
 
-            
             <audio id="clickSound" src="img/button-124476.mp3"></audio>
-        </div>
-            <section id="blankSpace"></section>
-            
+            <video id="video-background" autoplay muted loop>
+                <source src="img/pexels-rostislav-uzunov-9867271 (2160p).mp4" type="video/mp4">
 
-            <button id="renderButton" type="button">Render</button>
+            </video>
+        </div>
+        <section id="blankSpace"></section>
+
+
+        <button id="renderButton" type="button">Render</button>
         </div>
         <section id="blankSpace"></section>
 
@@ -71,9 +75,9 @@
         <div class="hint button">
             <img src="img/hangman icon.png" alt="Hint" id="hintIcon" class="hint-icon">
         </div>
-            
 
-     
+
+
         <div class="feedback-container">
 
         </div>

@@ -91,9 +91,18 @@ body {
 .main { 
     grid-area: main;
     background-size: cover; 
-    background-image: url('https://images.pexels.com/photos/2409038/pexels-photo-2409038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    margin: 0;
+    overflow: hidden;
 }
-
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
 .buttons1 {
    
     display: grid;
