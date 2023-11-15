@@ -58,10 +58,13 @@ function renderBlanks() {
 
     for (let i = 0; i < activeArray.length; i++) {
         const blankSpaceElement = document.createElement('div');
+        const blankSpaceOutDiv = document.createElement('div');
         blankSpaceElement.className = 'blank-spaces';
-        blankSpaceElement.id = activeArray[i]
+        blankSpaceOutDiv.className = 'answerContainer';
+        blankSpaceElement.id = activeArray[i];
         blankSpaceElement.textContent = activeArray[i];
-        blankSpace.appendChild(blankSpaceElement);
+        blankSpace.appendChild(blankSpaceOutDiv);
+        blankSpaceOutDiv.appendChild(blankSpaceElement);
         console.log(blankSpaceElement);
 
         function hideLetters() {
@@ -75,13 +78,16 @@ function renderBlanks() {
 
 
 
+// not using this function
 
-function showLetters() {
-    let showLetterDiv = document.getElementsByClassName('blank-spaces');
-    for (let i = 0; i < showLetterDiv.length; i++) {
-        showLetterDiv[i].style.visibility = "visible";
-    }
-}
+// function showLetters() {
+//     let showLetterDiv = document.getElementsByClassName('blank-spaces');
+//     for (let i = 0; i < showLetterDiv.length; i++) {
+//         showLetterDiv[i].style.visibility = "visible";
+//     }
+// }
+
+
 // created handleClick function
 function handleClick(event) {
     let letter = event.target.textContent;
