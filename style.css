@@ -201,6 +201,7 @@ button {
 }
 
 /* ---Home page------------------------------------------------- */
+
 .main {
     text-align: center;
 }
@@ -277,12 +278,19 @@ h2 span {
 }
 
 .newGame {
-    border: 1px gold solid;
-    margin-top: 50px;
+    /* border: 1px gold solid; */
+    margin-top: 100px;
     padding: 50px;
     font-size: 50px;
     color: gold;
-    background-color: #121212;
+    background-color: none;
+}
+
+.newGame button {
+    color:gold;
+    background-color: rgba(8, 8, 8, 0.793);
+    margin-top: 50px;
+    box-shadow: 0 20px 40px darkgray;
 }
 
 .stats p {
