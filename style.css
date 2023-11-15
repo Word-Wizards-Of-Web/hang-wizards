@@ -160,6 +160,68 @@ button {
     font-size: 25px;
 }
 
+/* ---Home page------------------------------------------------- */
+.main {
+    text-align: center;
+}
+
+h2 {
+    /* border: 1px red solid; */
+    text-align: center;
+    font-size: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.homePic {
+    /* border: 5px rgb(244, 21, 244) solid; */
+    text-align: center;
+    box-shadow: 0 25px 50px darkgray;
+    border-radius: 50%;  
+}
+
+.home-container p {
+        /* border: 1px blue solid; */
+        display: inline-flex;
+        margin-top: 25px;
+        font-size: 50px;
+        padding: 100px;  
+    }
+
+.info {
+    /* border: 1px orange solid; */
+    font-size: 40px;
+    padding-top: 100px;
+}
+
+.highlights {
+}
+.stats {
+    /* border: 1px rgb(21, 244, 240) solid;  */
+    padding: 100px;
+    margin-top: 50px;
+}
+
+.bold {
+    font-weight: bold;
+    color: gold;
+}
+
+.newGame {
+    border: 1px gold solid; 
+    margin-top: 50px;
+    padding: 50px;
+    font-size: 50px;
+    color: gold;
+    background-color: #121212;
+}
+
+.stats p {
+    border: 1px white solid;
+    font-size: 50px;
+    padding: 25px;
+}
+
 
 /* ---About me page--------------------------------------------- */
 
@@ -179,7 +241,8 @@ button {
     justify-content: center;
     width: 100%;
     margin-bottom: 50px;
-    box-shadow: 0 4px 8px darkgray;  
+    box-shadow: 0 4px 8px darkgray;
+    border-radius: 25%;  
 }
 
 .bio p {
@@ -188,5 +251,5 @@ button {
     text-align: center;
     width: 100%;
     font-size: 25px;
-    box-shadow: 0 4px 8px darkgrey;  
+    box-shadow: 0 16px 32px darkgrey;  
 }

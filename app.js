@@ -36,60 +36,78 @@ new Questions ('function', 'i,o')
 new Questions ('button', 't')
 new Questions ('meta', 'e,a')
 new Questions ('head', 'e,a') 
-// variable ties into uniqueWord to prevent repeats
-// let previousQuestions = [];
 
-// prevents repeats between iterations of the game
-// function uniqueWord() {
-//     function randomGuess() {
-//         return Math.floor(Math.random() * state.questionArray.length);
-//     }
 
-//     let repeats = [];
-//     let randomQ;
 
-//     while (repeats.length < 1) {
-//         randomQ = randomGuess();
-//             console.log("RandomQ:", randomQ);
-//         if (!repeats.includes(randomQ) && !previousQuestions.includes(randomQ)) {
-//             repeats.push(randomQ);
-//         }
-//     }
-
-//     previousQuestions = repeats;
-//     console.log(repeats); // Log the value of repeats
-//     return repeats;
-// }
-
-// uniqueWord();
+let activeArray = []
 
 function renderBlanks() {
     const blankSpace = document.getElementById('blankSpace');
-    
+    // empties array
+    activeArray.length = 0
     // Get a random word from state.questionArray
     const randomIndex = Math.floor(Math.random() * state.questionArray.length);
     const randomWord = state.questionArray[randomIndex].word;
 
     // Split the randomWord into an array of letters
-    const wordArray = randomWord.split('');
-        console.log(wordArray);
+    activeArray = randomWord.split('');
+
+
     // Clear the previous blanks before rendering new ones
     blankSpace.innerHTML = '';
 
-    for (let i = 0; i < wordArray.length; i++) {
-        const blankSpaceElement = document.createElement('span');
+    for (let i = 0; i < activeArray.length; i++) {
+        const blankSpaceElement = document.createElement('div');
         blankSpaceElement.className = 'blank-spaces';
-        blankSpaceElement.textContent = ' _ ';
+        blankSpaceElement.textContent = activeArray[i];
         blankSpace.appendChild(blankSpaceElement);
+        console.log(blankSpaceElement);
+
+        function hideLetters() {
+            blankSpaceElement.style.visibility = "hidden";
+        }
+        hideLetters();
     }
 }
 
-renderBlanks();
 
+
+renderBlanks();
+console.log(activeArray);
+
+function showLetters() {
+    let showLetterDiv = document.getElementsByClassName('blank-spaces');
+    for (let i = 0; i < showLetterDiv.length; i++) {
+        showLetterDiv[i].style.visibility = "visible";
+    }
+}
 // created handleClick function
 function handleClick(event) {
     let letter = event.target.textContent;
     console.log('Clicked letter:', letter);
+    state.currentguesses++;
+    console.log(state.currentguesses);
+    if(state.currentguesses === 10){
+        remove();
+    }
+    
+    for (let i = 0; i < activeArray.length; i++) {
+        if(letter === activeArray[i].toUpperCase()){
+            console.log('hekki');
+            
+            showLetters[i];
+        }
+    }
+}
+
+
+function handleClickRender(event) {
+    let render = event.target.textContent;
+    console.log(render);
+    if(state.currentguesses === 10){
+        renderBlanks()
+        state.currentguesses = 0
+    }
 }
 
 // Attach the handleClick function to each button
@@ -98,6 +116,9 @@ buttons.forEach(button => {
     button.addEventListener('click', handleClick);
 });
 
+const renderButtons = document.getElementById('renderButton');
+     renderButtons.addEventListener('click', handleClickRender);
+
 
 function playClickSound(clickSound) {
     var clickSound = document.getElementById(clickSound);
@@ -105,6 +126,13 @@ function playClickSound(clickSound) {
         clickSound.currentTime = 0;
         clickSound.play();
     }
+
+function remove(){
+    buttons.forEach(button => {
+        button.removeEventListener('click', handleClick);
+    });
+
 }
 
 console.log(state.questionArray);
+console.log(state.currentguesses);
