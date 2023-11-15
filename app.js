@@ -99,5 +99,12 @@ buttons.forEach(button => {
 });
 
 
+function playClickSound(clickSound) {
+    var clickSound = document.getElementById(clickSound);
+    if (clickSound) {
+        clickSound.currentTime = 0;
+        clickSound.play();
+    }
+}
 
 console.log(state.questionArray);
