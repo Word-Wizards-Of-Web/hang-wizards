@@ -42,77 +42,84 @@ new Questions("head", "e,a");
 let activeArray = [];
 
 function renderBlanks() {
-  const blankSpace = document.getElementById("blankSpace");
-  // empties array
-  activeArray.length = 0;
-  // Get a random word from state.questionArray
-  const randomIndex = Math.floor(Math.random() * state.questionArray.length);
-  const randomWord = state.questionArray[randomIndex].word;
 
-  // Split the randomWord into an array of letters
-  activeArray = randomWord.split("");
+    const blankSpace = document.getElementById('blankSpace');
+    // empties array
+    activeArray.length = 0
+    // Get a random word from state.questionArray
+    const randomIndex = Math.floor(Math.random() * state.questionArray.length);
+    const randomWord = state.questionArray[randomIndex].word;
 
-  // Clear the previous blanks before rendering new ones
-  blankSpace.innerHTML = "";
+    // Split the randomWord into an array of letters
+    activeArray = randomWord.split('');
 
-  for (let i = 0; i < activeArray.length; i++) {
-    state.totalAnswers++;
-    const blankSpaceElement = document.createElement("div");
-    const blankSpaceOutDiv = document.createElement("div");
-    blankSpaceElement.className = "blank-spaces";
-    blankSpaceOutDiv.className = "answerContainer";
-    blankSpaceElement.id = activeArray[i];
-    blankSpaceElement.textContent = activeArray[i];
-    blankSpace.appendChild(blankSpaceOutDiv);
-    blankSpaceOutDiv.appendChild(blankSpaceElement);
-    console.log(blankSpaceElement);
 
-    function hideLetters() {
-      blankSpaceElement.style.visibility = "hidden";
+    // Clear the previous blanks before rendering new ones
+    blankSpace.innerHTML = '';
+
+    
+
+    for (let i = 0; i < activeArray.length; i++) {
+        state.totalAnswers++;
+        const blankSpaceElement = document.createElement('div');
+        const blankSpaceOutDiv = document.createElement('div');
+        blankSpaceElement.className = 'blank-spaces';
+        blankSpaceOutDiv.className = 'answerContainer';
+        blankSpaceElement.id = activeArray[i];
+        blankSpaceElement.textContent = activeArray[i];
+        blankSpace.appendChild(blankSpaceOutDiv);
+        blankSpaceOutDiv.appendChild(blankSpaceElement);
+        console.log(blankSpaceElement);
+
+        function hideLetters() {
+            blankSpaceElement.style.visibility = "hidden";
+        }
+        hideLetters();
+        console.log(state.totalAnswers);
+
     }
     hideLetters();
     console.log(state.totalAnswers);
   }
 }
 
-// not using this function
 
-// function showLetters() {
-//     let showLetterDiv = document.getElementsByClassName('blank-spaces');
-//     for (let i = 0; i < showLetterDiv.length; i++) {
-//         showLetterDiv[i].style.visibility = "visible";
-//     }
-// }
-
-// function to unhide the next round button based off number of guesses, should include win/loss
-
-// function checkGuessesForNextRound() {
-//   if (state.currentguesses === 10) {
-//     remove();
-//     document.getElementById("nextButton").style.display = "block";
-//     console.log(`test`);
-//   }
-// }
 
 // created handleClick function
 function handleClick(event) {
-  let letter = event.target.textContent;
-  state.currentguesses++;
-  let divs = document.querySelectorAll(".blank-spaces");
+    console.log(event.target);
+    let letter = event.target.textContent;
+    state.currentguesses++;
+    let divs = document.querySelectorAll('.blank-spaces');
+    // remove1();
+    
+    // work on this tomorrow -----------------------------------------------------------------------------------------
+    // state.currentguesses.push('#showguess');
+    // const showGuessesContainer = document.getElementById('showGuess');
+    // const showGuesses = document.createElement('div');
+    // showGuesses.textContent = `Current Guesses: ${state.currentguesses}`;
+    // showGuessesContainer.appendChild(showGuesses);
 
-  for (let i = 0; i < divs.length; i++) {
-    if (letter === divs[i].id.toUpperCase()) {
-      function showLetters() {
-        let showLetterDiv = divs[i];
-        showLetterDiv.style.visibility = "visible";
-      }
-      showLetters();
-      state.numAnswers++;
-      console.log(state.numAnswers);
-    } else {
-      // grayout the background
+
+    for (let i = 0; i < divs.length; i++) {
+        if (letter === divs[i].id.toUpperCase()) {
+            function showLetters() {
+                let showLetterDiv = divs[i];
+                showLetterDiv.style.visibility = "visible";
+            }
+            showLetters();
+            state.numAnswers++;
+            console.log(state.numAnswers);
+        }
     }
-  }
+    if (state.currentguesses === 10) {
+        remove();
+        console.log(`test`);
+    }
+    event.target.classList.toggle('clicked');
+    event.target.removeEventListener('click', handleClick);
+}
+
 
   //so the button can change color on click
   event.target.classList.toggle("clicked");
@@ -124,41 +131,59 @@ function handleClick(event) {
 }
 
 function handleClickRender(event) {
-  let render = event.target.textContent;
-  console.log(render);
-  if (state.currentguesses === 10) {
-    renderBlanks();
-    letterButtonsEventListener();
-    state.currentguesses = 0;
-  }
+
+    let render = event.target.textContent;
+    console.log(render);
+    let toggleElements = document.querySelectorAll('.clicked');
+    toggleElements.forEach(function(element){
+        element.classList.remove('clicked')
+    });
+    if (state.currentguesses === 10) {
+        state.currentguesses = 0;
+        state.numAnswers = 0;
+        state.totalAnswers = 0;
+        renderBlanks();
+        letterButtonsEventListener();
+        
+    }
 }
 function newRoundClickRenders(event) {
-  let render = event.target.textContent;
-  console.log(render);
-  if (state.numAnswers == state.totalAnswers) {
-    renderBlanks();
-    letterButtonsEventListener();
-    state.currentguesses = 0;
-  }
+    let render = event.target.textContent;
+    console.log(render);
+    //toggles the buttons back to normal
+    let toggleElements = document.querySelectorAll('.clicked');
+    toggleElements.forEach(function(element){
+        element.classList.remove('clicked')
+    });
+
+    if (state.numAnswers == state.totalAnswers) {
+        state.currentguesses = 0;
+        state.numAnswers = 0;
+        state.totalAnswers = 0;
+        renderBlanks();
+        letterButtonsEventListener();
+        
+    }
+
 }
+// ----------eventListeners-------------------------------------------------------------------------------------------
 
 // Attach the handleClick function to each button
 function letterButtonsEventListener() {
-  const buttons = document.querySelectorAll(".buttons1 button");
-  // change color of buttons when clicked
-  // function handleClick() {
-  //     this.classList.toggle('clicked');
-  // }
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", handleClick);
-  });
+    const buttons = document.querySelectorAll('.buttons1 button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', handleClick);
+    });
+
 }
 
 function renderbuttonFunc() {
   const renderButtons = document.getElementById("renderButton");
   renderButtons.addEventListener("click", handleClickRender);
 }
+
 function newRoundButtonFunc() {
   const newRoundButton = document.getElementById("nextButton");
   newRoundButton.addEventListener("click", newRoundClickRenders);
@@ -170,6 +195,12 @@ function remove() {
     button.removeEventListener("click", handleClick);
   });
 }
+function remove1(buttonId){
+    playClickSound('clickSound');
+    let button = document.getElementById(buttonId);
+}
+
+
 function playClickSound(clickSound) {
   var clickSound = document.getElementById(clickSound);
   if (clickSound) {
