@@ -12,7 +12,17 @@
 <body>
     <header class="header">
         <h1>codeHang</h1>
-        <img src="img/logo code hang.JPG" alt="codehang">
+        <!-- <img src="img/logo code hang.JPG" alt="codehang"> -->
+        <audio class="mp3" autoplay loop controls style="display: inline" id="ourGameAudio">
+        <source src="game.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+      <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var audio = document.getElementById('ourGameAudio'); 
+      audio.volume = 0.1;
+    });
+  </script>
         <nav>
             <ul>
                 <li><a href="index.html"><button class="navButtons">Home</button></a></li>
@@ -34,45 +44,49 @@
         <section id="blankSpace"></section>
 
 
-        <button id="renderButton" type="button">Render</button>
+            <button id="renderButton" type="button">Render</button>
 
-        <button id="nextButton" type="button">Next Round</button>
+            <button id="nextButton" type="button">Next Round</button>
+            <div>
+                Current Guesses: <div id="showGuess"></div>
+            </div>
         </div>
         <section id="blankSpace"></section>
-
         <div class="buttons1">
-            <button type="button" onclick="playClickSound('clickSound')">A</button>
-            <button type="button" onclick="playClickSound('clickSound')">B</button>
-            <button type="button" onclick="playClickSound('clickSound')">C</button>
-            <button type="button" onclick="playClickSound('clickSound')">D</button>
+
+            <button type="button" onclick="playClickSound('clickSound')">Q</button>
+            <button type="button" onclick="playClickSound('clickSound')">W</button>
             <button type="button" onclick="playClickSound('clickSound')">E</button>
+            <button type="button" onclick="playClickSound('clickSound')">R</button>
+            <button type="button" onclick="playClickSound('clickSound')">T</button>
+            <button type="button" onclick="playClickSound('clickSound')">Y</button>
+            <button type="button" onclick="playClickSound('clickSound')">U</button>
+            <button type="button" onclick="playClickSound('clickSound')">I</button>
+            <button type="button" onclick="playClickSound('clickSound')">O</button>
+            <button type="button" onclick="playClickSound('clickSound')">P</button>
+            <button type="button" onclick="playClickSound('clickSound')">A</button>
+            <button type="button" onclick="playClickSound('clickSound')">S</button>
+            <button type="button" onclick="playClickSound('clickSound')">D</button>
             <button type="button" onclick="playClickSound('clickSound')">F</button>
             <button type="button" onclick="playClickSound('clickSound')">G</button>
             <button type="button" onclick="playClickSound('clickSound')">H</button>
-            <button type="button" onclick="playClickSound('clickSound')">I</button>
             <button type="button" onclick="playClickSound('clickSound')">J</button>
             <button type="button" onclick="playClickSound('clickSound')">K</button>
             <button type="button" onclick="playClickSound('clickSound')">L</button>
-            <button type="button" onclick="playClickSound('clickSound')">M</button>
-            <button type="button" onclick="playClickSound('clickSound')">N</button>
-            <button type="button" onclick="playClickSound('clickSound')">O</button>
-            <button type="button" onclick="playClickSound('clickSound')">P</button>
-            <button type="button" onclick="playClickSound('clickSound')">Q</button>
-            <button type="button" onclick="playClickSound('clickSound')">R</button>
-            <button type="button" onclick="playClickSound('clickSound')">S</button>
-            <button type="button" onclick="playClickSound('clickSound')">T</button>
-            <button type="button" onclick="playClickSound('clickSound')">U</button>
-            <button type="button" onclick="playClickSound('clickSound')">V</button>
-            <button type="button" onclick="playClickSound('clickSound')">W</button>
-            <button type="button" onclick="playClickSound('clickSound')">X</button>
-            <button type="button" onclick="playClickSound('clickSound')">Y</button>
             <button type="button" onclick="playClickSound('clickSound')">Z</button>
-            <button type="button" onclick="playClickSound('clickSound')">{</button>
+            <button type="button" onclick="playClickSound('clickSound')">X</button>
+            <button type="button" onclick="playClickSound('clickSound')">C</button>
+            <button type="button" onclick="playClickSound('clickSound')">V</button>
+            <button type="button" onclick="playClickSound('clickSound')">B</button>
+            <button type="button" onclick="playClickSound('clickSound')">N</button>
+            <button type="button" onclick="playClickSound('clickSound')">M</button>
+            <!-- <button type="button" onclick="playClickSound('clickSound')">{</button>
             <button type="button" onclick="playClickSound('clickSound')">}</button>
             <button type="button" onclick="playClickSound('clickSound')">[</button>
             <button type="button" onclick="playClickSound('clickSound')">]</button>
             <button type="button" onclick="playClickSound('clickSound')">;</button>
-            <button type="button" onclick="playClickSound('clickSound')">:</button>
+            <button type="button" onclick="playClickSound('clickSound')">:</button> -->
+
         </div>
         <div class="hint button">
             <img src="img/hangman icon.png" alt="Hint" id="hintIcon" class="hint-icon">
