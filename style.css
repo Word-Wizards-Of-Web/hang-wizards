@@ -347,7 +347,7 @@ h2 span {
 .bio p {
   background-color: #0d0d0d;
   display: block;
-  text-align: center;
+  text-align: left;
   width: 100%;
   font-size: 25px;
   box-shadow: 0 16px 32px rgb(126, 125, 125);
