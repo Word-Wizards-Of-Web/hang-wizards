@@ -58,6 +58,8 @@ function renderBlanks() {
     // Clear the previous blanks before rendering new ones
     blankSpace.innerHTML = '';
 
+    
+
     for (let i = 0; i < activeArray.length; i++) {
         state.totalAnswers++;
         const blankSpaceElement = document.createElement('div');
@@ -79,24 +81,21 @@ function renderBlanks() {
 }
 
 
-
-
-
-// not using this function
-
-// function showLetters() {
-//     let showLetterDiv = document.getElementsByClassName('blank-spaces');
-//     for (let i = 0; i < showLetterDiv.length; i++) {
-//         showLetterDiv[i].style.visibility = "visible";
-//     }
-// }
-
-
 // created handleClick function
 function handleClick(event) {
+    console.log(event.target);
     let letter = event.target.textContent;
     state.currentguesses++;
     let divs = document.querySelectorAll('.blank-spaces');
+    // remove1();
+    
+    // work on this tomorrow -----------------------------------------------------------------------------------------
+    // state.currentguesses.push('#showguess');
+    // const showGuessesContainer = document.getElementById('showGuess');
+    // const showGuesses = document.createElement('div');
+    // showGuesses.textContent = `Current Guesses: ${state.currentguesses}`;
+    // showGuessesContainer.appendChild(showGuesses);
+
 
     for (let i = 0; i < divs.length; i++) {
         if (letter === divs[i].id.toUpperCase()) {
@@ -106,52 +105,57 @@ function handleClick(event) {
             }
             showLetters();
             state.numAnswers++;
-           console.log(state.numAnswers);
-        }
-        else {
-            // grayout the background
-
+            console.log(state.numAnswers);
         }
     }
-  
-  
-    //so the button can change color on click
-    event.target.classList.toggle('clicked');
-
-  
     if (state.currentguesses === 10) {
         remove();
         console.log(`test`);
     }
+    event.target.classList.toggle('clicked');
+    event.target.removeEventListener('click', handleClick);
 }
 
 
 function handleClickRender(event) {
     let render = event.target.textContent;
     console.log(render);
+    let toggleElements = document.querySelectorAll('.clicked');
+    toggleElements.forEach(function(element){
+        element.classList.remove('clicked')
+    });
     if (state.currentguesses === 10) {
+        state.currentguesses = 0;
+        state.numAnswers = 0;
+        state.totalAnswers = 0;
         renderBlanks();
         letterButtonsEventListener();
-        state.currentguesses = 0
+        
     }
 }
 function newRoundClickRenders(event) {
     let render = event.target.textContent;
     console.log(render);
+    //toggles the buttons back to normal
+    let toggleElements = document.querySelectorAll('.clicked');
+    toggleElements.forEach(function(element){
+        element.classList.remove('clicked')
+    });
+
     if (state.numAnswers == state.totalAnswers) {
+        state.currentguesses = 0;
+        state.numAnswers = 0;
+        state.totalAnswers = 0;
         renderBlanks();
         letterButtonsEventListener();
-        state.currentguesses = 0;
+        
     }
 }
+// ----------eventListeners-------------------------------------------------------------------------------------------
 
 // Attach the handleClick function to each button
 function letterButtonsEventListener() {
     const buttons = document.querySelectorAll('.buttons1 button');
-    // change color of buttons when clicked
-    // function handleClick() {
-    //     this.classList.toggle('clicked');
-    // }
 
     buttons.forEach(button => {
         button.addEventListener('click', handleClick);
@@ -162,12 +166,11 @@ function renderbuttonFunc() {
     const renderButtons = document.getElementById('renderButton');
     renderButtons.addEventListener('click', handleClickRender);
 }
+
 function newRoundButtonFunc() {
     const newRoundButton = document.getElementById('nextButton');
     newRoundButton.addEventListener('click', newRoundClickRenders);
 }
-
-
 
 function remove() {
     const buttons = document.querySelectorAll('.buttons1 button');
@@ -175,6 +178,12 @@ function remove() {
         button.removeEventListener('click', handleClick);
     });
 }
+function remove1(buttonId){
+    playClickSound('clickSound');
+    let button = document.getElementById(buttonId);
+}
+
+
 function playClickSound(clickSound) {
     var clickSound = document.getElementById(clickSound);
     if (clickSound) {
