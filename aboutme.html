@@ -1,71 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
     <title>codeHang</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <h1>codeHang</h1>
-        <!-- <img src="img/logo code hang.JPG" alt="codehang"> -->
-        <audio class="mp3" autoplay loop controls style="display: inline" id="ourAudio">
-        <source src="about.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-    <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var audio = document.getElementById('ourAudio');
-    audio.volume = 0.2;
-  });
-</script>
-        <nav>
-            <ul>
-                <li><a href="index.html"><button class="navButtons">Home</button></a></li>
-                <li><a href="game.html"><button class="navButtons">Game</button></a></li>
-                <li><a href="aboutme.html"><button class="navButtons">About Us</button></a></li>
-            </ul>
-        </nav>
+      <h1>codeHang</h1>
+      <!-- <img src="img/logo code hang.JPG" alt="codehang"> -->
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html"><button class="navButtons">Home</button></a>
+          </li>
+          <li>
+            <a href="game.html"><button class="navButtons">Game</button></a>
+          </li>
+          <li>
+            <a href="aboutme.html"
+              ><button class="navButtons">About Us</button></a
+            >
+          </li>
+        </ul>
+
+        <div class="mp3-container">
+          <audio class="mp3" autoplay loop controls id="ourAudio">
+            <source src="about.mp3" type="audio/mp3" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </nav>
     </header>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var audio = document.getElementById("ourAudio");
+        audio.volume = 0.2;
+      });
+    </script>
     <main class="main">
-        <div class="bios">
-            <div class="bio">
-                <video id="video-background" autoplay muted loop>
-                    <source src="img/video (2160p) copy.mp4" type="video/mp4">
-                </video>
-                <img src="https://placehold.co/500x500" alt="image of..."/>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit duis tristique. Massa sed elementum tempus egestas sed sed risus. Mi eget mauris pharetra et. Etiam erat velit scelerisque in dictum non consectetur a. Ipsum a arcu cursus vitae congue mauris. 
-                </p>
-            </div>
-            <div class="bio">
-                <img src="https://placehold.co/500x500" alt="image of..."/>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit duis tristique. Massa sed elementum tempus egestas sed sed risus. Mi eget mauris pharetra et. Etiam erat velit scelerisque in dictum non consectetur a. Ipsum a arcu cursus vitae congue mauris. 
-                </p>
-            </div>
-            <div class="bio">
-                <img src="https://placehold.co/500x500" alt="image of..."/>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit duis tristique. Massa sed elementum tempus egestas sed sed risus. Mi eget mauris pharetra et. Etiam erat velit scelerisque in dictum non consectetur a. Ipsum a arcu cursus vitae congue mauris. 
-                </p>
-            </div>
-            <div class="bio">
-                <img src="https://placehold.co/500x500" alt="image of..."/>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit duis tristique. Massa sed elementum tempus egestas sed sed risus. Mi eget mauris pharetra et. Etiam erat velit scelerisque in dictum non consectetur a. Ipsum a arcu cursus vitae congue mauris. 
-                </p>
-            </div>
-        </div> 
+      <div class="bios">
+        <div class="bio">
+          <video id="video-background" autoplay muted loop>
+            <source src="img/video (2160p) copy.mp4" type="video/mp4" />
+          </video>
+          <img src="https://placehold.co/500x500" alt="image of..." />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet
+            consectetur adipiscing elit duis tristique. Massa sed elementum
+            tempus egestas sed sed risus. Mi eget mauris pharetra et. Etiam erat
+            velit scelerisque in dictum non consectetur a. Ipsum a arcu cursus
+            vitae congue mauris.
+          </p>
+        </div>
+        <div class="bio">
+          <img src="https://placehold.co/500x500" alt="image of..." />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet
+            consectetur adipiscing elit duis tristique. Massa sed elementum
+            tempus egestas sed sed risus. Mi eget mauris pharetra et. Etiam erat
+            velit scelerisque in dictum non consectetur a. Ipsum a arcu cursus
+            vitae congue mauris.
+          </p>
+        </div>
+        <div class="bio">
+          <img src="https://placehold.co/500x500" alt="image of..." />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet
+            consectetur adipiscing elit duis tristique. Massa sed elementum
+            tempus egestas sed sed risus. Mi eget mauris pharetra et. Etiam erat
+            velit scelerisque in dictum non consectetur a. Ipsum a arcu cursus
+            vitae congue mauris.
+          </p>
+        </div>
+        <div class="bio">
+          <img src="https://placehold.co/500x500" alt="image of..." />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet
+            consectetur adipiscing elit duis tristique. Massa sed elementum
+            tempus egestas sed sed risus. Mi eget mauris pharetra et. Etiam erat
+            velit scelerisque in dictum non consectetur a. Ipsum a arcu cursus
+            vitae congue mauris.
+          </p>
+        </div>
+      </div>
     </main>
     <footer class="footer">
-        <p>&copy; 2023 codeHang </p>
+      <p>&copy; 2023 codeHang</p>
     </footer>
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>
