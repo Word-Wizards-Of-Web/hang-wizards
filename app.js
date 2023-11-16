@@ -8,36 +8,51 @@ let state = {
   questionArray: [],
   numAnswers: 0,
   totalAnswers: 0,
+  lettersGuessed: [],
+  currentWord: [],
 };
 
 // construtor
-function Questions(word, hint) {
+function Word(word, hint) {
   this.word = word;
   this.hint = hint;
   state.questionArray.push(this);
 }
 // will be moved into local storage eventually
-new Questions("variable", "a,e");
-new Questions("HTML", "h,t");
-new Questions("CSS", "c");
-new Questions("DOM", "o");
-new Questions("loop", "o");
-new Questions("terminal", "i,a");
-new Questions("condition", "i,o");
-new Questions("selector", "o");
-new Questions("margin", "i,a");
-new Questions("padding", "i,a");
-new Questions("border", "o,e");
-new Questions("tags", "a,s");
-new Questions("flexbox", "e,x");
-new Questions("headings", "e,a");
-new Questions("footer", "o");
-new Questions("grid", "i");
-new Questions("array", "a");
-new Questions("function", "i,o");
-new Questions("button", "t");
-new Questions("meta", "e,a");
-new Questions("head", "e,a");
+new Word("variable", "a,e");
+new Word("HTML", "h,t");
+new Word("CSS", "c");
+new Word("DOM", "o");
+new Word("loop", "o");
+new Word("terminal", "i,a");
+new Word("condition", "i,o");
+new Word("selector", "o");
+new Word("margin", "i,a");
+new Word("padding", "i,a");
+new Word("border", "o,e");
+new Word("tags", "a,s");
+new Word("flexbox", "e,x");
+new Word("headings", "e,a");
+new Word("footer", "o");
+new Word("grid", "i");
+new Word("array", "a");
+new Word("function", "i,o");
+new Word("button", "t");
+new Word("meta", "e,a");
+new Word("head", "e,a");
+new Word("javascript", "a,s");
+new Word("database", "a,e");
+new Word("query", "u,e");
+new Word("event", "e,t");
+new Word("animation", "a,n");
+new Word("responsive", "e,s");
+new Word("attribute", "a,e");
+new Word("viewport", "i,e");
+new Word("element", "e,t");
+new Word("attribute", "a,e");
+new Word("prototype", "o,e");
+new Word("constructor", "o,u");
+new Word("inheritance", "i,a");
 
 let activeArray = [];
 
@@ -48,10 +63,12 @@ function renderBlanks() {
     activeArray.length = 0
     // Get a random word from state.questionArray
     const randomIndex = Math.floor(Math.random() * state.questionArray.length);
-    const randomWord = state.questionArray[randomIndex].word;
+    const randomWord = state.questionArray[randomIndex].word.toUpperCase();
 
     // Split the randomWord into an array of letters
     activeArray = randomWord.split('');
+    state.currentWord = Array.from(new Set(activeArray));
+
 
 
     // Clear the previous blanks before rendering new ones
@@ -80,14 +97,15 @@ function renderBlanks() {
     }
 }
 
-
-
-
-// created handleClick function
-function handleClick(event) {
+// created handleLetterClick function
+function handleLetterClick(event) {
     console.log(event.target);
     let letter = event.target.textContent;
+    console.log(letter);
+    state.lettersGuessed.push(letter);
+    console.log(state.lettersGuessed);
     state.currentguesses++;
+    console.log(state.currentWord);
     let divs = document.querySelectorAll('.blank-spaces');
     // remove1();
     
@@ -95,7 +113,8 @@ function handleClick(event) {
     // state.currentguesses.push('#showguess');
     // const showGuessesContainer = document.getElementById('showGuess');
     // const showGuesses = document.createElement('div');
-    // showGuesses.textContent = `Current Guesses: ${state.currentguesses}`;
+    showGuess.textContent = `Current Guesses: ${state.lettersGuessed.join(', ')}`;
+    // showGuessesContainer.removeChild('');
     // showGuessesContainer.appendChild(showGuesses);
 
 
@@ -107,20 +126,27 @@ function handleClick(event) {
             }
             showLetters();
             state.numAnswers++;
-            console.log(state.numAnswers);
+            // console.log(state.numAnswers);
         }
     }
+
+    const lettersGuessedSet = new Set(state.lettersGuessed);
+    state.questionArray
+    
+    console.log(state.currentWord.every(letter => lettersGuessedSet.has(letter)));
+    // Need to create a scoreboard, increase the score counter by 1, click on the next round and reset the necessary states, handle animation for win
+    if (state.currentWord.every(letter => lettersGuessedSet.has(letter))) {
+      alert('You Won!') 
+    };
+  // When you lose increase the loss counter by 1, handle animation for loss, reset the states after loss
     if (state.currentguesses === 10) {
         remove();
         console.log(`test`);
     }
+      //so the button can change color on click
     event.target.classList.toggle('clicked');
-    event.target.removeEventListener('click', handleClick);
+    event.target.removeEventListener('click', handleLetterClick);
 
-
-
-  //so the button can change color on click
-    event.target.classList.toggle("clicked");
 
     if (state.currentguesses === 10) {
     remove();
@@ -128,7 +154,8 @@ function handleClick(event) {
   }
 }
 
-function handleClickRender(event) {
+// Have reset button 
+function handleResetButton(event) {
 
     let render = event.target.textContent;
     console.log(render);
@@ -142,7 +169,7 @@ function handleClickRender(event) {
         state.totalAnswers = 0;
         renderBlanks();
         letterButtonsEventListener();
-        
+        state.lettersGuessed = [];
     }
 }
 function newRoundClickRenders(event) {
@@ -160,26 +187,26 @@ function newRoundClickRenders(event) {
         state.totalAnswers = 0;
         renderBlanks();
         letterButtonsEventListener();
-        
+        state.lettersGuessed = [];
     }
 
 }
 // ----------eventListeners-------------------------------------------------------------------------------------------
 
-// Attach the handleClick function to each button
+// Attach the handleLetterClick function to each button
 function letterButtonsEventListener() {
 
     const buttons = document.querySelectorAll('.buttons1 button');
 
     buttons.forEach(button => {
-        button.addEventListener('click', handleClick);
+        button.addEventListener('click', handleLetterClick);
     });
 
 }
 
-function renderbuttonFunc() {
-  const renderButtons = document.getElementById("renderButton");
-  renderButtons.addEventListener("click", handleClickRender);
+function addEventListenerToResetButton() {
+  const resetButton = document.getElementById("resetButton");
+  resetButton.addEventListener("click", handleResetButton);
 }
 
 function newRoundButtonFunc() {
@@ -190,7 +217,7 @@ function newRoundButtonFunc() {
 function remove() {
   const buttons = document.querySelectorAll(".buttons1 button");
   buttons.forEach((button) => {
-    button.removeEventListener("click", handleClick);
+    button.removeEventListener("click", handleLetterClick);
   });
 }
 function remove1(buttonId){
@@ -209,8 +236,8 @@ function playClickSound(clickSound) {
 }
 
 
-console.log(state.questionArray);
+// console.log(state.questionArray);
 letterButtonsEventListener();
-renderbuttonFunc();
+addEventListenerToResetButton();
 renderBlanks();
 newRoundButtonFunc();

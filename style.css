@@ -115,7 +115,7 @@ body {
   object-fit: cover;
   z-index: -1;
 }
-#renderButton {
+#resetButton {
   color: black;
 }
 
