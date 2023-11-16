@@ -197,17 +197,16 @@ button {
   text-align: center;
 }
 
-/* audio {
-    width: 75%;
-    background-color: #1a1a1a;
+audio {
+    width: 150%;
+    background-color: none;
     padding: 10px;
-    margin-top: 20px;
-    margin-left: 50px;
+    margin-top: 67px;
+    margin-left: 10px;
     border-radius: 5px;
-  } */
+  }
 
 h2 {
-  /* border: 1px red solid; */
   text-align: center;
   font-size: 100px;
   padding-top: 50px;
@@ -218,48 +217,44 @@ h2 {
   0% {
     color: white;
   }
-
   50% {
     color: gold;
   }
-
   100% {
     color: white;
   }
 }
 
-/* Apply animation to each letter */
 h2 span {
   display: inline-block;
-  animation: colorChange 5s infinite;
+  animation: colorChange 10s infinite;
 }
 
 .homePic {
-  /* border: 5px rgb(244, 21, 244) solid; */
   text-align: center;
   box-shadow: 0 25px 50px darkgray;
   border-radius: 50%;
 }
 
-.home-container p {
-  /* border: 1px blue solid; */
+/* .home-container p {
   display: inline-flex;
   margin-top: 25px;
   font-size: 50px;
   padding: 100px;
-}
+} */
 
 .info {
-  /* border: 1px orange solid; */
   font-size: 40px;
   padding-top: 100px;
 }
 
 .highlights {
+    padding-top: 25px;
+    font-weight: bold;
+    color: gold;
 }
 
 .stats {
-  /* border: 1px rgb(21, 244, 240) solid;  */
   padding: 100px;
   margin-top: 50px;
 }
@@ -270,32 +265,34 @@ h2 span {
 }
 
 .newGame {
-    /* border: 1px gold solid; */
-    margin-top: 100px;
-    padding: 50px;
-    font-size: 50px;
+    font-size: 45px;
     color: gold;
     background-color: none;
 }
 
 .newGame button {
+    border: 2px white solid;
     color:gold;
     background-color: rgba(8, 8, 8, 0.793);
-    margin-top: 50px;
+    margin-top: 75px;
+    margin-bottom: 100px;
     box-shadow: 0 20px 40px darkgray;
-
+    cursor: pointer;
 }
 
-.stats p {
-  /* border: 1px white solid; */
-  font-size: 50px;
-  padding: 25px;
+.newGame button:hover {
+    background-color: gold;
+    color: black;
 }
+
+/* .stats p {
+  font-size: 40px;
+  padding: 20px;
+} */
 
 /* ---About me page--------------------------------------------- */
 
 .bios {
-  /* border: 1px red solid; */
   display: flex;
   margin-top: 25px;
   width: 100%;
@@ -304,12 +301,10 @@ h2 span {
 }
 
 .bio {
-  /* border: solid black 5px; */
   margin: 50px;
 }
 
 .bio img {
-  /* border: 1px blue solid; */
   display: block;
   justify-content: center;
   width: 100%;
@@ -321,7 +316,6 @@ h2 span {
 
 .bio p {
   background-color: #0d0d0d;
-  /* border: 1px green solid; */
   display: block;
   text-align: center;
   width: 100%;
@@ -330,3 +324,5 @@ h2 span {
   padding: 10px;
   word-spacing: 5px;
 }
+
+
