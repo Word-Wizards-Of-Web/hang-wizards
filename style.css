@@ -354,3 +354,8 @@ h2 span {
   padding: 10px;
   word-spacing: 5px;
 }
+
+#aboutPic {
+  height: 300px;
+  width: 300px;
+}
