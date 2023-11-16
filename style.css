@@ -23,6 +23,10 @@ header img {
   border-radius: 5px;
 }
 
+/* .icon {
+  margin-left: 845px;
+} */
+
 h1 {
   font-size: xxx-large;
   font-family: "Dancing Script", cursive;
@@ -33,6 +37,16 @@ li {
   display: inline-block;
   margin: 1.4em 1em 1em 1em;
 }
+
+audio {
+  
+  width: 10%;
+  background-color: #646363;
+  border-radius: 12px;
+  margin: 20px 0;
+  margin-left: 250px;
+}
+
 
 .navButtons {
   align-items: center;
@@ -101,21 +115,31 @@ body {
   object-fit: cover;
   z-index: -1;
 }
+#renderButton {
+  color: black;
+}
+
+#nextButton {
+  color: black;
+  /* display: none; */
+}
 
 .buttons1 {
-  background-color: #070707;
+  background-color: #646363;
   display: grid;
-  grid-template-columns: repeat(10, 1fr); /* Ten columns per row */
-  gap: 20px; /* Adjust the gap between columns and rows as needed */
+  grid-template-columns: repeat(10, 1fr);
+  gap: 20px; 
   margin: auto;
-  width: 800px; /* Adjust the width of the container as needed */
-  margin-top: 400px; /* Adjust the top margin as needed */
+  width: 800px; 
+  margin-top: 400px; 
+  border-radius: 15px;
 }
 
 button {
   box-shadow: 0 4px 8px darkgray;
   font-size: larger;
-  padding: 5px 10px;
+  /* padding: 5px 10px; */
+  margin: 8px;
   color: #ffffff;
 }
 
@@ -197,14 +221,6 @@ button {
   text-align: center;
 }
 
-/* audio {
-    width: 75%;
-    background-color: #1a1a1a;
-    padding: 10px;
-    margin-top: 20px;
-    margin-left: 50px;
-    border-radius: 5px;
-  } */
 
 h2 {
   /* border: 1px red solid; */
