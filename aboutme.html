@@ -12,7 +12,17 @@
 <body>
     <header class="header">
         <h1>codeHang</h1>
-        <img src="img/logo code hang.JPG" alt="codehang">
+        <!-- <img src="img/logo code hang.JPG" alt="codehang"> -->
+        <audio class="mp3" autoplay loop controls style="display: inline" id="ourAudio">
+        <source src="about.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var audio = document.getElementById('ourAudio');
+    audio.volume = 0.2;
+  });
+</script>
         <nav>
             <ul>
                 <li><a href="index.html"><button class="navButtons">Home</button></a></li>

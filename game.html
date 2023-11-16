@@ -12,7 +12,17 @@
 <body>
     <header class="header">
         <h1>codeHang</h1>
-        <img src="img/logo code hang.JPG" alt="codehang">
+        <!-- <img src="img/logo code hang.JPG" alt="codehang"> -->
+        <audio class="mp3" autoplay loop controls style="display: inline" id="ourGameAudio">
+        <source src="game.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+      <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var audio = document.getElementById('ourGameAudio'); 
+      audio.volume = 0.1;
+    });
+  </script>
         <nav>
             <ul>
                 <li><a href="index.html"><button class="navButtons">Home</button></a></li>
@@ -42,40 +52,41 @@
             </div>
         </div>
         <section id="blankSpace"></section>
-
         <div class="buttons1">
-            <button type="button" id="A" onclick="remove1('A')">A</button>
-            <button type="button" id="B" onclick="remove1('B')">B</button>
-            <button type="button" id="C" onclick="remove1('C')">C</button>
-            <button type="button" id="D" onclick="remove1('D')">D</button>
-            <button type="button" id="E" onclick="remove1('E')">E</button>
-            <button type="button" id="F" onclick="remove1('F')">F</button>
-            <button type="button" id="G" onclick="remove1('G')">G</button>
-            <button type="button" id="H" onclick="remove1('H')">H</button>
-            <button type="button" id="I" onclick="remove1('I')">I</button>
-            <button type="button" id="J" onclick="remove1('J')">J</button>
-            <button type="button" id="K" onclick="remove1('K')">K</button>
-            <button type="button" id="L" onclick="remove1('L')">L</button>
-            <button type="button" id="M" onclick="remove1('M')">M</button>
-            <button type="button" id="N" onclick="remove1('N')">N</button>
-            <button type="button" id="O" onclick="remove1('O')">O</button>
-            <button type="button" id="P" onclick="remove1('P')">P</button>
-            <button type="button" id="Q" onclick="remove1('Q')">Q</button>
-            <button type="button" id="R" onclick="remove1('R')">R</button>
-            <button type="button" id="S" onclick="remove1('S')">S</button>
-            <button type="button" id="T" onclick="remove1('T')">T</button>
-            <button type="button" id="U" onclick="remove1('U')">U</button>
-            <button type="button" id="V" onclick="remove1('V')">V</button>
-            <button type="button" id="W" onclick="remove1('W')">W</button>
-            <button type="button" id="X" onclick="remove1('X')">X</button>
-            <button type="button" id="Y" onclick="remove1('Y')">Y</button>
-            <button type="button" id="Z" onclick="remove1('Z')">Z</button>
-            <button type="button" id="{" onclick="remove1('{')">{</button>
-            <button type="button" id="}" onclick="remove1('}')">}</button>
-            <button type="button" id="[" onclick="remove1('[')">[</button>
-            <button type="button" id="]" onclick="remove1(']')">]</button>
-            <button type="button" id=";" onclick="remove1(';')">;</button>
-            <button type="button" id=":" onclick="remove1(':')">:</button>
+
+            <button type="button" onclick="playClickSound('clickSound')">Q</button>
+            <button type="button" onclick="playClickSound('clickSound')">W</button>
+            <button type="button" onclick="playClickSound('clickSound')">E</button>
+            <button type="button" onclick="playClickSound('clickSound')">R</button>
+            <button type="button" onclick="playClickSound('clickSound')">T</button>
+            <button type="button" onclick="playClickSound('clickSound')">Y</button>
+            <button type="button" onclick="playClickSound('clickSound')">U</button>
+            <button type="button" onclick="playClickSound('clickSound')">I</button>
+            <button type="button" onclick="playClickSound('clickSound')">O</button>
+            <button type="button" onclick="playClickSound('clickSound')">P</button>
+            <button type="button" onclick="playClickSound('clickSound')">A</button>
+            <button type="button" onclick="playClickSound('clickSound')">S</button>
+            <button type="button" onclick="playClickSound('clickSound')">D</button>
+            <button type="button" onclick="playClickSound('clickSound')">F</button>
+            <button type="button" onclick="playClickSound('clickSound')">G</button>
+            <button type="button" onclick="playClickSound('clickSound')">H</button>
+            <button type="button" onclick="playClickSound('clickSound')">J</button>
+            <button type="button" onclick="playClickSound('clickSound')">K</button>
+            <button type="button" onclick="playClickSound('clickSound')">L</button>
+            <button type="button" onclick="playClickSound('clickSound')">Z</button>
+            <button type="button" onclick="playClickSound('clickSound')">X</button>
+            <button type="button" onclick="playClickSound('clickSound')">C</button>
+            <button type="button" onclick="playClickSound('clickSound')">V</button>
+            <button type="button" onclick="playClickSound('clickSound')">B</button>
+            <button type="button" onclick="playClickSound('clickSound')">N</button>
+            <button type="button" onclick="playClickSound('clickSound')">M</button>
+            <!-- <button type="button" onclick="playClickSound('clickSound')">{</button>
+            <button type="button" onclick="playClickSound('clickSound')">}</button>
+            <button type="button" onclick="playClickSound('clickSound')">[</button>
+            <button type="button" onclick="playClickSound('clickSound')">]</button>
+            <button type="button" onclick="playClickSound('clickSound')">;</button>
+            <button type="button" onclick="playClickSound('clickSound')">:</button> -->
+
         </div>
         <div class="hint button">
             <img src="img/hangman icon.png" alt="Hint" id="hintIcon" class="hint-icon">
