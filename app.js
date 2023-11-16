@@ -78,10 +78,8 @@ function renderBlanks() {
         console.log(state.totalAnswers);
 
     }
-    hideLetters();
-    console.log(state.totalAnswers);
-  }
 }
+
 
 
 
@@ -118,13 +116,13 @@ function handleClick(event) {
     }
     event.target.classList.toggle('clicked');
     event.target.removeEventListener('click', handleClick);
-}
+
 
 
   //so the button can change color on click
-  event.target.classList.toggle("clicked");
+    event.target.classList.toggle("clicked");
 
-  if (state.currentguesses === 10) {
+    if (state.currentguesses === 10) {
     remove();
     console.log(`test`);
   }
