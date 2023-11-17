@@ -37,6 +37,15 @@
     </nav>
     <main class="main">
 
+        <div class="howToPlay">
+            <p>How to play:</p>
+            <p>codeHang is a word-guessing game where you try to guess a hidden word. The word is represented by boxes, and you will have 10 attempts to fill in the blanks by proposing 1 letter at a time. The game continues until the word is guessed correctly or you run out of guesses.</p>
+
+        </div>
+        <div class="rules">
+            <p>Note: All hidden words are related to HTML, CSS and JavaScript.</p>
+        </div>
+
         <div class="game-container">
 
             <audio id="clickSound" src="img/button-124476.mp3"></audio>
@@ -58,8 +67,9 @@
         <section id="blankSpace"></section>
         <div id="scoreboard">
             <p>Wins: <span id="winCount">0</span></p>
-          </div>
-        <div class="buttons1">
+        </div>
+
+          <div class="buttons1">
 
             <button type="button" onclick="playClickSound('clickSound')">Q</button>
             <button type="button" onclick="playClickSound('clickSound')">W</button>
@@ -95,6 +105,7 @@
             <button type="button" onclick="playClickSound('clickSound')">:</button> -->
 
         </div>
+        
         <div class="hint button">
             <img src="img/hangman icon.png" alt="Hint" id="hintIcon" class="hint-icon">
         </div>
