@@ -136,7 +136,7 @@ body {
   gap: 20px;
   margin: auto;
   width: 800px;
-  margin-top: 250px;
+  margin-top: 150px;
   border-radius: 15px;
   grid-template-rows: repeat(2, 1fr) auto;
 }
